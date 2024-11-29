@@ -1,6 +1,8 @@
 import "./index.less";
+import "./btn.less";
 import { DownOutlined } from "@ant-design/icons";
 import { useEffect } from "react";
+import FeiChuang from "../../components/Feichuang";
 const Login = () => {
   useEffect(() => {
     function Star(id, x, y) {
@@ -203,7 +205,7 @@ const Login = () => {
       <div class="landscape"></div>
       <div class="filter"></div>
       <canvas id="canvas"></canvas>
-      <div className="container">
+      <div className="container1">
         <div className="mytop">
           <img
             src="https://www.type.fun/assets/logo-home.589229d4.png"
@@ -220,6 +222,62 @@ const Login = () => {
             <li>校园版</li>
             <li>继续学习</li>
           </ul>
+        </div>
+        <div className="mycontent">
+          <div className="tip">
+            TypeFun &nbsp;&nbsp; <span style={{ color: "#9e9ea3" }}>|</span>{" "}
+            &nbsp;&nbsp;打字星球
+          </div>
+          <h1>在线打字练习</h1>
+          <p>
+            丰富的盲打课程，科学的打字课程设计，诗词歌赋，经典名著，少儿编程，背单词，小键盘，练习打字同时收获更多，结合跟读轻松学会拼音，百万用户选择的打字练习网站
+          </p>
+          <div className="box-2">
+            <div className="btn btn-two">
+              <span>立即开始学习</span>
+            </div>
+          </div>
+          <div className="them">
+            <svg
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="1499"
+              width="30"
+              height="30"
+            >
+              <path
+                d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0z m0 981.333333C253.866667 981.333333 42.666667 770.133333 42.666667 512S253.866667 42.666667 512 42.666667s469.333333 211.2 469.333333 469.333333-211.2 469.333333-469.333333 469.333333z"
+                fill="white"
+                p-id="1500"
+              ></path>
+              <path
+                d="M672 441.6l-170.666667-113.066667c-57.6-38.4-106.666667-12.8-106.666666 57.6v256c0 70.4 46.933333 96 106.666666 57.6l170.666667-113.066666c57.6-42.666667 57.6-106.666667 0-145.066667z"
+                fill="white"
+                p-id="1501"
+              ></path>
+            </svg>
+            <span style={{ marginLeft: "10px" }}>观看影片</span>
+          </div>
+          <div className="auth">
+            <img
+              src="https://www.type.fun/assets/img-character.d52efdbe.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="hanxing">
+          <div className="container">
+            <div className="planet"></div>
+          </div>
+        </div>
+        <div className="hanxing">
+          <div className="container2">
+            <div className="planet"></div>
+          </div>
+        </div>
+        <div className="feichuang1">
+          <FeiChuang></FeiChuang>
         </div>
       </div>
     </>
