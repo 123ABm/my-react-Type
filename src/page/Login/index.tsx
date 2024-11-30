@@ -1,9 +1,18 @@
 import "./index.less";
 import "./btn.less";
 import { DownOutlined } from "@ant-design/icons";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import FeiChuang from "../../components/Feichuang";
+import BsanLogin from "@/components/BsanLogin";
 const Login = () => {
+  const [mybs, setMybs] = useState(false);
+  const body = useRef(null);
+  function start() {
+    setMybs(true);
+  }
+  function end(m) {
+    setMybs(m);
+  }
   useEffect(() => {
     function Star(id, x, y) {
       this.id = id;
@@ -233,7 +242,7 @@ const Login = () => {
             丰富的盲打课程，科学的打字课程设计，诗词歌赋，经典名著，少儿编程，背单词，小键盘，练习打字同时收获更多，结合跟读轻松学会拼音，百万用户选择的打字练习网站
           </p>
           <div className="box-2">
-            <div className="btn btn-two">
+            <div className="btn btn-two" onClick={start}>
               <span>立即开始学习</span>
             </div>
           </div>
@@ -280,6 +289,10 @@ const Login = () => {
           <FeiChuang></FeiChuang>
         </div>
       </div>
+      <div className="Loginye">
+        {mybs ? <BsanLogin fn={end} className="open"></BsanLogin> : ""}
+      </div>
+      {mybs ? <div className="myblack"></div> : ""}
     </>
   );
 };

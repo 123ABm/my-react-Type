@@ -299,3 +299,26 @@ body {
     top: 50%;
   }
 }
+
+.login-box {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.login-box.open {
+  transform: scale(1);
+  opacity: 1;
+}
+@keyframes Logingoo {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.BsanLogin .content {
+  animation: Logingoo 0.3s linear;
+}
