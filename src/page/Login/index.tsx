@@ -109,7 +109,7 @@ const Login = () => {
       delete dots[this.id];
     };
 
-    var canvas = document.getElementById("canvas"),
+    var canvas = document.getElementById("canvas") as HTMLCanvasElement,
       ctx = canvas.getContext("2d"),
       WIDTH,
       HEIGHT,
@@ -176,7 +176,7 @@ const Login = () => {
       if (!mouseMoving) return;
 
       if (dots.length == 0) {
-        dots[0] = new Dot(0, mouseX, mouseY);
+        dots[0] = new Dot(0, mouseX, mouseY, 1);
         dots[0].draw();
         return;
       }
@@ -199,7 +199,8 @@ const Login = () => {
       dots[dots.length] = new Dot(
         dots.length,
         mouseX + xVariation,
-        mouseY + yVariation
+        mouseY + yVariation,
+        1
       );
       dots[dots.length - 1].draw();
       dots[dots.length - 1].link();
@@ -211,8 +212,8 @@ const Login = () => {
   }, []);
   return (
     <>
-      <div class="landscape"></div>
-      <div class="filter"></div>
+      <div className="landscape"></div>
+      <div className="filter"></div>
       <canvas id="canvas"></canvas>
       <div className="container1">
         <div className="mytop">
