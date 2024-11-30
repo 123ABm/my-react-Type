@@ -1,10 +1,5 @@
-import Login from "./page/Login";
 function App() {
-  return (
-    <>
-      <Login></Login>
-    </>
-  );
+  return <>this is app</>;
 }
 
 export default App;
