@@ -1,52 +1,61 @@
-import "./index.less";
+import styles from "./index.module.less";
 import PlayBtn from "../playBtn";
 import { CloseOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 const BsanLogin = (props) => {
   const [show, setShow] = useState(true);
+  const navigate = useNavigate();
   function fn() {
     setShow(false);
     props.fn(false);
+    console.log(props.className);
   }
+  const toRole = () => {
+    console.log("点击了");
+
+    navigate("/role");
+  };
   return (
     <>
       {show ? (
-        <div className="BsanLogin">
-          <div class="content">
-            <div class="form-content">
-              <CloseOutlined onClick={fn} />
-              <h1 class="title">
+        <div className={styles.BsanLogin}>
+          <div className={classNames(styles.content, props.className)}>
+            <div className={styles.formcontent}>
+              <CloseOutlined onClick={fn} className={styles.anticon} />
+              <h1 className={styles.title}>
                 <img
                   src="https://www.type.fun/assets/logo-home.589229d4.png"
                   alt=""
                 />
               </h1>
-              <div class="input_field">
-                <span class="areaCode">+86</span>
+              <div className={styles.input_field}>
+                <span className={styles.areaCode}>+86</span>
                 <input
-                  className="phoneInput"
+                  className={styles.phoneInput}
                   type="text"
                   placeholder="手机号"
                 />
               </div>
-              <div class="input_field">
+              <div className={styles.input_field}>
                 <input
-                  className="PassInput"
+                  className={styles.PassInput}
                   type="password"
                   placeholder="验证码"
                 />
-                <div class="Acquire_box">
-                  <p class="Acquire">获取验证码</p>
+                <div className={styles.Acquire_box}>
+                  <p className={styles.Acquire}>获取验证码</p>
                 </div>
               </div>
-              <p class="social_text">
+              <p className={styles.social_text}>
                 <input
-                  class="shortMessage"
+                  className={styles.shortMessage}
                   type="checkbox"
                   aria-hidden="false"
                   value="false"
                 />
-                <span class="agree_text">
+                <span className={styles.agree_text}>
                   <span>
                     已阅读并同意
                     <a target="_blank" href="">
@@ -59,14 +68,18 @@ const BsanLogin = (props) => {
                   </span>
                 </span>
               </p>
-              <PlayBtn text={"登入"}></PlayBtn>
-              <div class="other-login">
-                <div class="divider">
-                  <span class="line"></span>
-                  <a class="divider-text" href="">
+              <PlayBtn
+                onClick={toRole}
+                text={"登入"}
+                className={styles.BSPlayBtn}
+              ></PlayBtn>
+              <div className={styles.otherlogin}>
+                <div className={styles.divider}>
+                  <span className={styles.line}></span>
+                  <a className={styles.dividertext} href="">
                     遇到问题{" "}
                   </a>
-                  <span class="line"></span>
+                  <span className={styles.line}></span>
                 </div>
               </div>
             </div>

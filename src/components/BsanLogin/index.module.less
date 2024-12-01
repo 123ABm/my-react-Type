@@ -13,8 +13,16 @@
     text-decoration: none;
     font-family: PlastoTrial_ExtraBold;
   }
-
+  @keyframes Logingoo {
+    from {
+      transform: scale(0.9);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
   .content {
+    transform: scale(0.8);
     width: 440px;
     height: 481px;
     margin: 0 auto;
@@ -22,13 +30,10 @@
     overflow: hidden;
     z-index: 9999;
     border-radius: 30px;
-    .anticon {
-      position: relative;
-      top: 28px;
-      left: 195px;
-      font-size: 28px;
-      color: #515151;
-    }
+    // opacity: 0;
+
+    animation: Logingoo 0.3s linear forwards;
+
     h1 {
       position: relative;
       top: 15px;
@@ -60,7 +65,7 @@
     width: 100%;
   }
 
-  .content .form-content {
+  .content .formcontent {
     width: 430px;
     background-color: rgba(218, 94, 142, 0.7);
     border-radius: 30px;
@@ -73,9 +78,16 @@
     justify-content: center;
     flex-direction: column;
     padding: 50px;
+    .anticon {
+      position: relative;
+      top: 28px;
+      left: 195px;
+      font-size: 28px;
+      color: #515151;
+    }
   }
 
-  .content .form-content::after {
+  .content .formcontent::after {
     content: "";
     width: 500px;
     height: 100vh;
@@ -87,13 +99,13 @@
     background-size: cover;
   }
 
-  .content .form-content .title {
+  .content .formcontent .title {
     width: 116px;
     height: 40px;
     margin: 0 0 8% 0;
   }
 
-  .content .form-content .title img {
+  .content .formcontent .title img {
     width: 100%;
   }
 
@@ -227,21 +239,21 @@
     color: #51a7e0;
   }
 
-  .content .form-content .forgot-pwd {
+  .content .formcontent .forgot-pwd {
     width: 100%;
     margin-bottom: 6%;
   }
 
-  .content .form-content .forgot-pwd span {
+  .content .formcontent .forgot-pwd span {
     float: left;
     cursor: pointer;
   }
 
-  .content .form-content .forgot-pwd span:hover {
+  .content .formcontent .forgot-pwd span:hover {
     color: #0192d5;
   }
 
-  .content .form-content .btn {
+  .content .formcontent .btn {
     width: 300px;
     background-color: #5995fd;
     border: none;
@@ -256,21 +268,21 @@
     transition: 0.5s;
   }
 
-  .content .form-content .btn:hover {
+  .content .formcontent .btn:hover {
     transform: translateY(2px);
     background-color: #346ac7;
   }
 
-  .content .form-content .btn:active {
+  .content .formcontent .btn:active {
     transform: translateY(3px);
   }
 
-  .content .form-content .other-login {
+  .content .formcontent .otherlogin {
     width: 100%;
     margin: 3%;
   }
 
-  .content .form-content .other-login .divider {
+  .content .formcontent .otherlogin .divider {
     width: 100%;
     margin: 20px 0;
     text-align: center;
@@ -279,14 +291,14 @@
     justify-content: center;
   }
 
-  .content .form-content .other-login .divider .line {
+  .content .formcontent .otherlogin .divider .line {
     width: 5%;
     display: inline-block;
     height: 1px;
     background-color: white;
   }
 
-  .content .form-content .other-login .divider .divider-text {
+  .content .formcontent .otherlogin .divider .dividertext {
     vertical-align: middle;
     margin: 0 10px;
     display: inline-block;
@@ -294,10 +306,12 @@
     white-space: nowrap;
   }
 }
-.PlayBtn button {
-  width: 131px !important ;
-  height: 56px !important;
-  position: absolute;
-  top: 140px;
-  border-radius: 15px;
+.BSPlayBtn {
+  button {
+    width: 131px !important ;
+    height: 56px !important;
+    position: absolute;
+    top: 160px;
+    border-radius: 15px;
+  }
 }

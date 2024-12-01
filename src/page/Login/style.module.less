@@ -1,5 +1,4 @@
-html,
-body {
+body.xylogin {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -58,21 +57,10 @@ body {
       margin: 0 auto;
       color: #9e9ea3;
     }
-    .box-2 {
+    .box2 {
       margin-top: 20px;
-      .btn {
-        &.btn-two {
-          background-color: rgba(255, 105, 180, 0.5);
-          border: none;
-          // padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: rgba(255, 105, 180, 0.7);
-          }
-        }
+      span {
+        background-color: rgba(255, 105, 180, 0.5);
       }
     }
     .them {
@@ -300,14 +288,14 @@ body {
   }
 }
 
-.login-box {
+.content {
   transform: scale(0.8);
   transition: transform 0.3s ease-in-out;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-.login-box.open {
+.content.open {
   transform: scale(1);
   opacity: 1;
 }

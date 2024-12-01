@@ -1,17 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  font-family: "Open Sans Condensed", sans-serif;
-}
-
 div[class*="box"] {
   height: 33.33%;
   //   width: 100%;
@@ -87,19 +75,19 @@ div[class*="box"] {
       BUTTON TWO
 ========================
 */
-.btn-two {
+.btntwo {
   color: #fff;
   transition: all 0.5s;
   position: relative;
 }
-.btn-two span {
+.btntwo span {
   z-index: 2;
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.btn-two::before {
+.btntwo::before {
   content: "";
   position: absolute;
   top: 0;
@@ -111,7 +99,7 @@ div[class*="box"] {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
 }
-.btn-two::after {
+.btntwo::after {
   content: "";
   position: absolute;
   top: 0;
@@ -123,11 +111,11 @@ div[class*="box"] {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
 }
-.btn-two:hover::before {
+.btntwo:hover::before {
   transform: rotate(-45deg);
   background-color: rgba(255, 255, 255, 0);
 }
-.btn-two:hover::after {
+.btntwo:hover::after {
   transform: rotate(45deg);
   background-color: rgba(255, 255, 255, 0);
 }
