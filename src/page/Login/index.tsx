@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import FeiChuang from "../../components/Feichuang";
 import BsanLogin from "@/components/BsanLogin";
 import classNames from "classnames";
+import Myblack from "@/components/myblack";
 const Login = () => {
   const navigate = useNavigate();
   const [mybs, setMybs] = useState(false);
@@ -315,7 +316,7 @@ const Login = () => {
             ""
           )}
         </div>
-        {mybs ? <div className={styles2.myblack}></div> : ""}
+        {mybs ? <Myblack></Myblack> : ""}
       </body>
     </>
   );
