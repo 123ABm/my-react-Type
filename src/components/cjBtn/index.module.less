@@ -1,0 +1,35 @@
+.btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 160px;
+  button {
+    width: 160px;
+    height: 56px;
+    color: white;
+    border: 2px solid #a2496b;
+    // background: rgba(216, 88, 134, 0.7);
+    border-radius: 8px;
+    background-color: #843552;
+    clip-path: polygon(
+      0px 0px,
+      100% 0px,
+      100% 71.4286%,
+      90% 100%,
+      0px 100%,
+      0% 50%
+    );
+  }
+  span {
+    background: #843552;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 12px;
+    height: 12px;
+    border-bottom-right-radius: 2px;
+    clip-path: polygon(100% 100%, 100% 0px, 0px 100%);
+    transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+  }
+}

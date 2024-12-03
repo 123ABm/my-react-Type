@@ -1,8 +1,9 @@
 import styles from "./index.module.less";
-const Myblack = () => {
+import classNames from "classnames";
+const Myblack = (props) => {
   return (
     <>
-      <div className={styles.myblack}></div>
+      <div className={classNames(styles.myblack, props.className)}></div>
     </>
   );
 };
