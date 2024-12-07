@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
+    "@nextui-org/input": "^2.2.5",
     "@rollup/pluginutils": "^5.1.3",
     "ant": "^0.2.0",
     "antd": "^5.22.3",
@@ -21,6 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
+    "swiper": "^11.1.15",
     "three": "^0.171.0",
     "vite-plugin-css-modules": "^0.0.1"
   },

@@ -4,6 +4,7 @@
   justify-content: center;
   position: relative;
   width: 160px;
+
   button {
     width: 160px;
     height: 56px;
@@ -21,6 +22,10 @@
       0% 50%
     );
   }
+
+  span:hover {
+    background-color: #d85886;
+  }
   span {
     background: #843552;
     position: absolute;
@@ -31,5 +36,11 @@
     border-bottom-right-radius: 2px;
     clip-path: polygon(100% 100%, 100% 0px, 0px 100%);
     transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+  }
+}
+.btn:hover {
+  span,
+  button {
+    background-color: #d85886;
   }
 }

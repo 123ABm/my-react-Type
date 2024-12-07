@@ -4,11 +4,16 @@ import { useState, useRef } from "react";
 import classNames from "classnames";
 import faker from "faker";
 import CjBtn from "@/components/cjBtn";
+import { useNavigate } from "react-router-dom";
 faker.locale = "zh_CN";
 const Role = () => {
   const [state, setState] = useState(1);
   const [isLogin, setIsLogin] = useState(false);
   const mouse = useRef(null);
+  const editorValue = useRef(null);
+  const navigate = useNavigate();
+  //错误信息
+  const [err, setErr] = useState("");
 
   // 学生数组
   const sturole = [
@@ -207,6 +212,22 @@ const Role = () => {
   };
   //自定义姓名表单
   const [modal2Open, setModal2Open] = useState(false);
+  //关闭编辑姓名窗口
+  function closed() {
+    setIsLogin(false);
+    setErr("");
+  }
+  //编辑姓名传值
+  function editor() {
+    const value = editorValue.current.value;
+    if (value.trim() === "") {
+      setErr("角色姓名不能为空！");
+    } else {
+      setInputValue(value);
+      setErr("");
+      closed();
+    }
+  }
   return (
     <>
       <body className={styles.background}>
@@ -330,7 +351,7 @@ const Role = () => {
               </div>
             </div>
             <div className={styles.btn}>
-              <button>新建角色</button>
+              <button onClick={() => navigate("/Souye")}>新建角色</button>
               <span></span>
             </div>
             <ul className={styles.gz} ref={mouse} onMouseMove={handlemouse}>
@@ -361,9 +382,109 @@ const Role = () => {
         {isLogin ? <Myblack className={styles.isLogin}></Myblack> : ""}
         {isLogin ? (
           <div className={styles.xgName}>
-            <h1 style={{ color: "white" }}>修改角色名称</h1>
-            <input type="text" />
-            <CjBtn text={"确认"}></CjBtn>
+            <svg
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="3431"
+              width="20"
+              height="20"
+              style={{
+                position: "relative",
+                left: "200px",
+                top: "-35px",
+                zIndex: 9,
+              }}
+              onClick={closed}
+            >
+              <path
+                d="M877 859.2L166.2 148.4c-14.4-14.4-14.4-37.8 0-52.2 14.4-14.4 37.8-14.4 52.2 0L929.2 807c14.4 14.4 14.4 37.8 0 52.2-14.3 14.4-37.8 14.4-52.2 0z"
+                fill="#828282"
+                p-id="3432"
+              ></path>
+              <path
+                d="M166.2 807L877 96.2c14.4-14.4 37.8-14.4 52.2 0 14.4 14.4 14.4 37.8 0 52.2L218.4 859.2c-14.4 14.4-37.8 14.4-52.2 0-14.3-14.3-14.3-37.8 0-52.2z"
+                fill="#828282"
+                p-id="3433"
+              ></path>
+            </svg>
+            <div>
+              <h1 style={{ color: "white" }}>修改角色名称</h1>
+              <div
+                style={{
+                  position: "relative",
+                  height: "90px",
+                  marginBottom: "20px",
+                }}
+              >
+                <input
+                  type="text"
+                  style={{ paddingLeft: "50px", fontSize: "20px" }}
+                  ref={editorValue}
+                />
+                <svg
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="2428"
+                  width="30"
+                  height="30"
+                  style={{
+                    position: "absolute",
+                    left: "60px",
+                    top: "40px",
+                  }}
+                >
+                  <path
+                    d="M512 447.223c-88.224 0-160-71.776-160-160s71.776-160 160-160c88.225 0 160 71.776 160 160s-71.775 160-160 160z m0-256c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zM454.901 870.594c-96.594 0-184.933-3.802-231.263-49.955C203.308 800.386 193 774.164 193 742.701c0-31.629 10.247-62.812 30.457-92.686 17.978-26.573 42.908-50.741 74.098-71.833C359.256 536.46 437.418 512.53 512 512.53c74.55 0 152.55 23.943 214.002 65.691 31.05 21.094 55.861 45.273 73.746 71.867C819.822 679.937 830 711.096 830 742.701c0 31.552-10.317 57.827-30.664 78.097-50.714 50.521-151.822 50.128-258.88 49.723a7395.45 7395.45 0 0 0-56.914-0.001c-9.605 0.037-19.163 0.074-28.641 0.074zM512 806.447c9.567 0 19.149 0.037 28.701 0.073 49.52 0.191 96.284 0.37 135.808-4.396 38.418-4.633 64.546-13.604 77.659-26.668 5.079-5.06 11.832-13.96 11.832-32.755 0-38.089-27.688-78.744-75.963-111.54C638.933 596.442 574.04 576.53 512 576.53c-126.309 0-255 83.862-255 166.171 0 18.675 6.738 27.547 11.807 32.596 32.045 31.922 128.975 31.55 214.491 31.224 9.556-0.037 19.139-0.074 28.702-0.074z"
+                    fill="#767c8c"
+                    p-id="2429"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                style={{
+                  color: "red",
+                  height: "24px",
+                  position: "absolute",
+                  top: "175px",
+                  left: "60px",
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "10px",
+                }}
+              >
+                {err ? (
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    p-id="5291"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M987.008 846.816l-448-704a32.032 32.032 0 0 0-54.016 0l-448 704A32 32 0 0 0 64 896h896a32 32 0 0 0 27.008-49.184zM122.304 832L512 219.616 901.696 832H122.304z"
+                      fill="#FF0000"
+                      p-id="5292"
+                    ></path>
+                    <path
+                      d="M495.808 328.896l-268.8 422.4a19.2 19.2 0 0 0 16.192 29.504h537.6a19.2 19.2 0 0 0 16.192-29.504l-268.8-422.4a19.2 19.2 0 0 0-32.384 0zM544 736h-64v-64h64v64z m0-288v192h-64v-192h64z"
+                      fill="#FF0000"
+                      p-id="5293"
+                    ></path>
+                  </svg>
+                ) : (
+                  ""
+                )}
+                {err}
+              </span>
+              <CjBtn
+                text={"确认"}
+                className={styles.cjbtn}
+                onClick={editor}
+              ></CjBtn>
+            </div>
           </div>
         ) : (
           ""

@@ -340,22 +340,73 @@ body.background {
   }
   .xgName {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 350px;
     border: 1px solid #ccc;
     z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
     left: 50%;
     top: 50%;
+    box-sizing: border-box;
+    padding: 50px 0;
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: #181a20;
+    clip-path: polygon(0px 10%, 10% 0px, 100% 0%, 100% 90%, 90% 100%, 0% 100%);
+    background-color: #565b67;
+    border-radius: 15px;
+    div {
+      width: 440px;
+      height: 340px;
+      background-color: #181a21;
+      clip-path: polygon(
+        0px 10%,
+        10% 0px,
+        100% 0%,
+        100% 90%,
+        90% 100%,
+        0% 100%
+      );
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 15px !important;
+    }
+    .cjbtn {
+      z-index: 9;
+      // position: sticky;
+      position: relative;
+      width: 100%;
+      margin-top: 30px;
+      height: 60px;
+      button {
+        width: 80%;
+        clip-path: polygon(0px 0%, 100% 0px, 100% 70%, 94% 100%, 0% 100%);
+      }
+      span {
+        // left: 100px;
+        width: 18px;
+        height: 14px;
+        left: 378px;
+
+        top: 42px;
+        z-index: 99999999999999999999999999999999999999999999 !important;
+        // position: fixed;
+      }
+    }
+    h1 {
+      margin-top: 50px;
+    }
     input {
       width: 80%;
       height: 50px;
+      color: white;
+      box-sizing: border-box;
       border: 2px solid #333740;
       background-color: #111418;
       border-radius: 15px;
-      clip-path: polygon(0% 30%, 5% 0%, 100% 0%, 100% 70%, 95% 100%, 0% 100%);
+      // clip-path: polygon(0% 30%, 5% 0%, 100% 0%, 100% 70%, 95% 100%, 0% 100%);
+      margin-top: 30px;
+      margin-bottom: 40px;
     }
   }
 }

@@ -1,12 +1,11 @@
-// import styles from "./index.module.less";
+import styles from "./index.module.less";
 import classNames from "classnames";
 const CjBtn = (props) => {
   return (
-    /*    <div className={classNames(styles.btn, props.className)}>
-      <button>{props.text}</button>
+    <div className={classNames(styles.btn, props.className)}>
+      <button onClick={props.onClick}>{props.text}</button>
       <span></span>
-    </div> */
-    <></>
+    </div>
   );
 };
 export default CjBtn;

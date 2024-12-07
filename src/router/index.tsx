@@ -1,6 +1,8 @@
 import Login from "@/page/Login";
 import Role from "@/page/Role";
 import Go from "@/page/go";
+import Play from "@/page/play";
+import Souye from "@/page/souye";
 import { createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
   {
@@ -12,8 +14,12 @@ const router = createBrowserRouter([
     element: <Role />,
   },
   {
-    path: "/go",
-    element: <Go />,
+    path: "/play",
+    element: <Play />,
+  },
+  {
+    path: "/Souye",
+    element: <Souye />,
   },
 ]);
 export default router;
