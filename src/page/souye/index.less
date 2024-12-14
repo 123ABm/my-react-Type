@@ -5,11 +5,79 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  li {
+    list-style: none;
+  }
+  .navigat {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      margin-left: 60px;
+      img {
+        width: 200px;
+      }
+    }
+    .right {
+      margin-right: 60px;
+      display: flex;
+      width: 750px;
+
+      justify-content: space-between;
+      align-items: center;
+      li {
+        div {
+          display: flex;
+          align-items: center;
+        }
+        color: white;
+        display: flex;
+        align-items: center;
+      }
+      .top1 {
+        img {
+          width: 150px;
+        }
+      }
+      .top2 {
+        font-size: 13px;
+        font-weight: bolder;
+        position: relative;
+        color: white;
+        img {
+          width: 330px;
+          height: 70px;
+          margin-top: 15px;
+        }
+        .item1 {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          left: 7px;
+          top: 20px;
+          img {
+            width: 35px;
+            height: 35px;
+            margin-top: 0px;
+          }
+        }
+        .item2 {
+          top: 27px;
+          position: absolute;
+          right: 10px;
+          svg {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
   .mylunbo {
-    margin-top: 22vh;
     position: relative;
     width: 100vw;
-    // overflow: hidden;
     .swiper-scrollbar {
       position: absolute;
       left: 50%;
@@ -26,7 +94,7 @@
       }
     }
     .swiper {
-      height: 420px;
+      height: 510px;
       padding: 50px 0;
       .swiper-wrapper {
         width: 3000px;
@@ -44,9 +112,9 @@
       );
       position: absolute;
       top: 50%;
-      transform: rotate(180deg) translateY(50%);
-      // margin-left: 50px;
+      transform: rotate(180deg) translateY(45%);
       z-index: 9;
+
       img {
         width: 100%;
         height: 100%;
@@ -65,13 +133,14 @@
       right: 0;
       z-index: 9;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-45%);
       img {
         width: 100%;
         height: 100%;
       }
     }
     .swiper-slide {
+      margin-top: 125px;
       border: 2px solid rgb(127, 133, 150);
       height: 330px;
       width: 280px !important;
@@ -81,13 +150,15 @@
       border-radius: 5px;
       justify-content: center;
       transition: border-color 0.3s ease, transform 0.3s ease,
-        margin-right 0.3s ease;
+        margin-right 0.3s ease, box-shadow 0.3s ease;
       transform-origin: left center;
       margin-right: 50px !important;
+
       &:hover {
         border-color: #b2466b;
         transform: scale(1.2);
         margin-right: 130px !important;
+        box-shadow: 0 0 50px 5px #b2466b;
       }
       &:nth-child(1) {
         margin-left: 100px;
@@ -96,7 +167,6 @@
       .myItem {
         width: 270px;
         height: 320px;
-        overflow: hidden;
         background-color: #311d5d;
 
         .tp {
@@ -108,22 +178,22 @@
         &:hover {
           background-color: #5a1b5f;
           .xtq {
-            top: 129px;
+            top: 120px;
           }
         }
 
         .xtq {
           transition: all 0.4s 0.25s ease;
-          width: 270px;
+          width: 255px;
+          padding-left: 15px;
           background: linear-gradient(
               rgba(0, 0, 0, 0) 0%,
               rgba(0, 0, 0, 0.3) 100%
             ),
             linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
           position: absolute;
-          // top: 125px;
           top: 250px;
-          height: 200px;
+          height: 206px;
           h2 {
             color: white;
             font-size: 27px;
