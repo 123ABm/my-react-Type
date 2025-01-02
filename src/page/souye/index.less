@@ -23,8 +23,27 @@
       margin-right: 60px;
       display: flex;
       width: 750px;
+      position: relative;
+      .top1 {
+        .fj {
+          background-image: url("./assets/img/3.png");
+          width: 200px;
+          height: 150px;
+          background-size: 1400px 1500px;
+          background-position: 0px 0px;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: -10px;
+          left: -110px;
+        }
+        img {
+          z-index: 9;
+          position: relative;
+        }
+      }
 
       justify-content: space-between;
+
       align-items: center;
       li {
         div {
@@ -238,6 +257,42 @@
         height: 100%;
         background-color: #674187;
         transition: width 0.3s ease;
+      }
+    }
+  }
+  .footer {
+    border: 3px solid #7f8596;
+    // box-shadow: 0 0 80px 30px #7a5dd4;
+    width: 400px;
+    height: 200px;
+    margin-top: 55px;
+    background-repeat: no-repeat;
+    position: relative;
+    // margin-bottom: 15px;
+    background-image: url("./assets/img/image.png");
+    background-size: 450px 200px;
+    box-shadow: 0 0 50px 25px #4f4492;
+    // background-position: -200px 0px;
+    // transform: rotateY(180deg);
+    .item1 {
+      background-image: url("https://www.type.fun/assets/time-bg-2.7bb4b025.svg");
+      position: absolute;
+      bottom: 34px;
+      // left: 30px;
+      color: white;
+      width: 370px;
+      width: 100%;
+      text-align: center;
+    }
+    .item2 {
+      position: absolute;
+      z-index: 9;
+      bottom: -12px;
+      // opacity: 0.9;
+      //
+      background: linear-gradient(to right, #120f20, #8866e1);
+      img {
+        width: 400px;
       }
     }
   }

@@ -1,9 +1,10 @@
 import Login from "@/page/Login";
 import Role from "@/page/Role";
-import Go from "@/page/go";
 import Play from "@/page/play";
 import Souye from "@/page/souye";
 import { createBrowserRouter } from "react-router-dom";
+import Tshisanbai from "@/page/tshisanbai";
+import Wordtree from "@/page/wordtree";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/Souye",
     element: <Souye />,
+  },
+  {
+    path: "/tshisanbai",
+    element: <Tshisanbai />,
+  },
+  {
+    path: "/wordtree",
+    element: <Wordtree />,
   },
 ]);
 export default router;

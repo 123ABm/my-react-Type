@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./index.less";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -6,8 +7,30 @@ import "swiper/less/navigation";
 import "swiper/less/pagination";
 import "swiper/less/scrollbar";
 import btnSvg from "./assets/img/btn.svg";
+import { useNavigate } from "react-router-dom";
 
 const Souye = () => {
+  const [time, setTime] = useState(4735); // 初始时间为 01:19:15 的秒数
+  const navigate = useNavigate();
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const h = Math.floor(seconds / 3600)
+      .toString()
+      .padStart(2, "0");
+    const m = Math.floor((seconds % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  };
+
   const itemBox = [
     {
       id: 1,
@@ -29,12 +52,12 @@ const Souye = () => {
     },
     {
       id: 3,
-      img: "src/page/souye/assets/img/1.png",
+      img: "src/page/souye/assets/img/wordtree.jpg",
       current: 0,
-      total: "965",
-      title: "诗词歌赋",
+      total: 1100,
+      title: "世界树",
       content:
-        "精选《唐诗三百首》，《宋词三百首》，《诗经》作品共九百余篇，是中小学必学的古文内容，一边学拼音，一边背诵诗词，同时练习打字速度，一举多得。",
+        "世界树为你解决各种疑问难题，一个问题提供三种方案,让你不再迷茫。世界树的音译名为“尤克特拉希尔”（古诺尔斯语：Askr Yggdrasills，英语：Yggdrasill）。"
     },
     {
       id: 4,
@@ -79,7 +102,7 @@ const Souye = () => {
       total: "965",
       title: "诗词歌赋",
       content:
-        "精选《唐诗三百首》，《宋词三百首》，《诗经》作品共九百余篇，是中小学必学的古文内容，一边学拼音，一边背诵诗词，同时练习打字速度，一举多得。",
+        "精选《唐诗三百首》，《宋词三百首》，《诗经》作品共九百余��，是中小学必学的古文内容，一边学拼音，一边背诵诗词，同时练习打字速度，一举多得。",
     },
     {
       id: 9,
@@ -91,7 +114,14 @@ const Souye = () => {
         "精选《唐诗三百首》，《宋词三百首》，《诗经》作品共九百余篇，是中小学必学的古文内容，一边学拼音，一边背诵诗词，同时练习打字速度，一举多得。",
     },
   ];
-
+function GotoNav(item){
+ if(item===2){
+  navigate("/tshisanbai");
+ }else if(item===3){
+  navigate("/wordtree");
+ }
+  
+}
   return (
     <div className="souye">
       {/* 导航 */}
@@ -101,7 +131,7 @@ const Souye = () => {
         </div>
         <ul className="right">
           <li className="top1">
-            <div></div>
+            <div className="fj"></div>
             <div>
               <img src="src/page/souye/assets/img/2.png" alt="" />
             </div>
@@ -235,8 +265,8 @@ const Souye = () => {
           onSwiper={(swiper) => console.log(swiper)}
         >
           {itemBox.map((item) => (
-            <SwiperSlide key={item.id} style={{ width: "270px" }}>
-              <div className="myItem">
+            <SwiperSlide key={item.id} style={{ width: "270px" }} >
+              <div className="myItem" onClick={()=>GotoNav(item.id)}>
                 <div
                   className="tp"
                   style={{ backgroundImage: `url(${item.img})` }}
@@ -257,6 +287,19 @@ const Souye = () => {
         </div>
         <div className="swiper-button-next1">
           <img src={btnSvg} alt="Next" />
+        </div>
+      </div>
+      {/* 底部优惠倒计时 */}
+      <div className="footer">
+        <div className="item1">
+          <span>仅剩1天</span>
+          <span>{formatTime(time)}</span>
+          <span style={{ marginLeft: "20px", color: "#b14a80" }}>
+            查看详情&gt;&gt;
+          </span>
+        </div>
+        <div className="item2">
+          <img src="src/page/souye/assets/img/5.png" alt="" />
         </div>
       </div>
     </div>
