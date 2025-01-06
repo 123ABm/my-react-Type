@@ -7,6 +7,8 @@ import FeiChuang from "../../components/Feichuang";
 import BsanLogin from "@/components/BsanLogin";
 import classNames from "classnames";
 import Myblack from "@/components/myblack";
+import { throttle } from "lodash";
+
 const Login = () => {
   const navigate = useNavigate();
   const [mybs, setMybs] = useState(false);
@@ -169,14 +171,21 @@ const Login = () => {
       requestAnimationFrame(animate);
     }
 
-    window.onmousemove = function (e) {
+    // Throttle mousemove event
+    const handleMouseMove = throttle((e) => {
       mouseMoving = true;
       mouseX = e.clientX;
       mouseY = e.clientY;
-      clearInterval(mouseMoveChecker);
-      mouseMoveChecker = setTimeout(function () {
+      clearTimeout(mouseMoveChecker);
+      mouseMoveChecker = setTimeout(() => {
         mouseMoving = false;
       }, 100);
+    }, 100); // Adjust throttle time as needed
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
     };
 
     function drawIfMouseMoving() {
