@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+**在线打字 - 一个基于交互式学习的现代打字学习平台**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 使用 Kimi 和智谱清言 API 构建
 
-Currently, two official plugins are available:
+### 特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ 从零开始学习打字
 
-## Expanding the ESLint configuration
+💻 高效AI问答功能
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+🔄 实时响应与动态对话交互
 
-- Configure the top-level `parserOptions` property like this:
+🎨 现代化的界面设计，增强用户体验
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🚀 优化的交互式学习体验
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+✨ 快速加载与即时反馈
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+🧠 集成 AI 模块，实现高效知识提取
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+🔤 全面支持 TypeScript 开发，提升代码质量
+
+🎁 ...以及更多功能等你探索
+
+---
+### **快速入门指南**
+
+要开始练习打字，请运行以下命令：
+
+```bash
+pnpm i
+pnpm dev
+
+
+现在，快来体验这款集现代技术与交互式学习于一体的在线打字练习吧！
