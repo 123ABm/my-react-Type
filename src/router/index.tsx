@@ -29,6 +29,6 @@ const router = createBrowserRouter([
   {
     path: "/wordtree",
     element: <Wordtree />,
-  },
+  }
 ]);
 export default router;

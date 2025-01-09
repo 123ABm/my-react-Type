@@ -1,9 +1,41 @@
 .wordtree2{
+  .react-flow{
+    overflow: visible!important;
+    .react-flow__node-output{
+      
+     li{
+      // margin-left: 10px;
+      list-style-type: none;
+     }
+    }
+    
+  }
+  background-image: url('./assets/img/bg.jpg');
+  background-size: cover;
+  @keyframes tree {
+    0% {
+    filter: blur(8px);
+    transform: scale(1) rotate(0deg);
+}
+
+50% {
+    filter: blur(15px);
+    transform: scale(1.2) rotate(180deg);
+}
+
+100% {
+    filter: blur(8px);
+    transform: scale(1) rotate(1turn);
+}
+  }
     display: flex;
     justify-content: space-between;
 .wordtree{
     height: 100vh;
       width: 50vw;
+      
+      background-size: cover;
+      background-position-x: -500px;
    #app {
 
   height: 100vh;
@@ -26,7 +58,10 @@
 .chatbox{
     width: 40vw;
     height: 100vh;
+    position: relative;
+    z-index: 100;
 }
+
 .chat-box {
     width: 70%;
     height: 90%;
@@ -37,7 +72,41 @@
   display: flex;
   flex-direction: column;
 }
-
+.react-flow__handle {
+  background-color: #d85886 !important; /* 设置连接点的背景颜色 */
+  border-color: #d85886 !important; /* 设置连接点的边框颜色 */
+}
+.react-flow__controls{
+  position: absolute;
+  top: -20px;
+  left: 90px;
+  height: 105px;
+  // width: 500px;
+  transform:scale(1.5) rotateZ(90deg);
+.react-flow__controls-zoomout{
+   transform: rotateZ(-90deg);
+}
+.react-flow__controls-interactive{
+  transform: rotateZ(-90deg);
+}
+}
+.react-flow__attribution{
+  display: none;
+}
+.react-flow__minimap {
+  border-radius: 50%; /* 将边框半径设置为50%以实现圆形 */
+  overflow: hidden; /* 确保内容不会溢出圆形边界 */
+  width: 150px; /* 设置宽度 */
+  height: 150px; /* 设置高度 */
+  left: 0;
+  border: 2px solid #447921 !important;
+  box-shadow: 0 0 50px 5px #447921 ; /* 添加阴影以增强视觉效果 */
+  // background-color: #447921;
+  svg{
+    width: 100px;
+    margin: 0 auto;
+  }
+}
 .chat-header {
 //   background-color: #5788fe;
   color: white;
@@ -52,28 +121,119 @@
 }
 
 .chat-body {
+  // background-image: url('./assets/img/chatbg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   flex: 1;
-  padding: 10px;
-  width: 90%;
+  width: 100%;
+  background-color: #f0f0f0;
+  font-size: 18px;
+  padding: 10px 0px 70px 0px;
   overflow-y: auto;
+  position: relative;
+  // top: ;
 }
 
 .chat-message {
   display: flex;
   align-items: flex-start;
   margin-bottom: 10px;
-  p{
-    background-color: #f0f0f0;
-    width: 60%;
+  position: relative;
+  .avator{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    // overflow: hidden;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    .avbg{
+         width: 60%;
+    height: 60%;
+background: conic-gradient(from 180deg at 50% 50%, rgba(8, 148, 255, .8) 0deg, rgba(147, 203, 255, .8) 43deg, hsla(56, 73%, 78%, .8) 108deg, rgba(255, 144, 4, .8) 179deg, rgba(255, 46, 84, .8) 230deg, rgba(201, 89, 221, .8) 283deg, rgba(93, 104, 255, .8) 334deg, rgba(8, 148, 255, .8) 1turn, rgba(147, 203, 255, .8) 403deg), #d8d8d8;
+        animation: tree 4s linear infinite;
+        border-radius: 50%;
+        position: absolute;
+    }
+       .bbb{
+        position: absolute;
+          width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+       } 
+ img{
+    border-radius: 50%;
+   background-color: white;
+    width: 45px;
+    height: 45px;
+position: absolute;
+  }
+  }
+ 
+  p.chatp{
+    background-color: #ffffff;
+    width: 50%;
     padding: 10px;
+    // opacity: 0.5;
+    border-radius: 10px;
+    position: relative;
+    top: 50px;
+    left: -10px;
+    margin-bottom: 40px;
+    p{
+ white-space: pre-wrap !important;
+    }
+   
   }
 }
-
+.avator{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    // overflow: hidden;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    .avbg{
+         width: 60%;
+    height: 60%;
+background: conic-gradient(from 180deg at 50% 50%, rgba(8, 148, 255, .8) 0deg, rgba(147, 203, 255, .8) 43deg, hsla(56, 73%, 78%, .8) 108deg, rgba(255, 144, 4, .8) 179deg, rgba(255, 46, 84, .8) 230deg, rgba(201, 89, 221, .8) 283deg, rgba(93, 104, 255, .8) 334deg, rgba(8, 148, 255, .8) 1turn, rgba(147, 203, 255, .8) 403deg), #d8d8d8;
+        animation: tree 4s linear infinite;
+        border-radius: 50%;
+        position: absolute;
+    }
+       .bbb{
+        position: absolute;
+          width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       } 
+ img{
+    border-radius: 50%;
+   background-color: white;
+    width: 45px;
+    height: 45px;
+position: absolute;
+  }
+  }
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
 .chat-footer {
@@ -111,5 +271,38 @@
 
 .chat-message.ai {
   justify-content: flex-start;
+  p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+  }
+  .ant-spin{
+    margin-left: 80px!important;
+    margin-top: 10px;
+    .ant-spin-dot-item{
+      background-color: #d85886;
+    }
+  }
+
 }
+.ant-spin-dot-item{
+  background-color: #d85886;
+}
+.bbb{
+   .ant-spin{
+    margin-left: 110px!important;
+    margin-top: 30px;
+  }
+}
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.minimap-node {
+  transform: scale(0.1); /* 缩小节点 */
+  transform-origin: center; /* 确保缩放以中心为基准 */
 }
