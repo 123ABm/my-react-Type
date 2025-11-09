@@ -32,7 +32,8 @@
 
 <img width="1913" height="991" alt="image" src="https://github.com/user-attachments/assets/c934ef87-da63-4988-9d2b-3f59a6a58e2f" />
 
-![Uploading image.png…]()
+<img width="1912" height="967" alt="image" src="https://github.com/user-attachments/assets/16b3a730-fc15-4371-971d-f9ed1a5850ed" />
+
 
 
 ### **快速入门指南**
