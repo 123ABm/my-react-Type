@@ -26,6 +26,15 @@
 相关页面截图如下:
 <img width="1901" height="977" alt="image" src="https://github.com/user-attachments/assets/99ebc495-1268-49db-8e26-acee0ca6b3de" />
 
+<img width="1880" height="949" alt="image" src="https://github.com/user-attachments/assets/4167f012-1554-48b1-9115-d972642ff2c0" />
+
+<img width="1914" height="994" alt="image" src="https://github.com/user-attachments/assets/dd68cb0e-85ad-4993-8c61-2f24625c1e9d" />
+
+<img width="1913" height="991" alt="image" src="https://github.com/user-attachments/assets/c934ef87-da63-4988-9d2b-3f59a6a58e2f" />
+
+![Uploading image.png…]()
+
+
 ### **快速入门指南**
 
 要开始练习打字，请运行以下命令：
