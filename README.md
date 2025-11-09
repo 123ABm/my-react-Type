@@ -23,6 +23,9 @@
 🎁 ...以及更多功能等你探索
 
 ---
+相关页面截图如下:
+<img width="1901" height="977" alt="image" src="https://github.com/user-attachments/assets/99ebc495-1268-49db-8e26-acee0ca6b3de" />
+
 ### **快速入门指南**
 
 要开始练习打字，请运行以下命令：
